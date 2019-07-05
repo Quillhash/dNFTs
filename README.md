@@ -11,10 +11,6 @@ The proposed standard is for distributed ownership of non fungible assets on EOS
 ### RAM usage
 The RAM usage is used for every creation and listing of the digital asset. It also depends on how much data is stored in the mdata fields. If considered empty, each digital asset may take upto 0.4 - 0.5 kB RAM. The contract deployment requires ~717 kB RAM.
 
-### Platforms using it   
-**Zeptagram** is the one doing great job using this standard and are first to implement it. They have created a marketplace for music rights via their platform. It shall be an awesome oppurtunity for anyone to list and earn from their music.
-https://zeptagram.com/
-
 ---------------------------  
 
 ### Contract Actions:
@@ -37,6 +33,18 @@ ACTION create (name issuer,
  ```
 
 To create a new token under some category like ```Harrypotter``` for ```ebook``` category. 
+
+
+#### open
+
+```
+ACTION open (name ram_payer,
+             uint64_t category_id,
+             name owner)
+```     
+
+It is callable by ram_payer to create the wallet for owner of given NFT (using category_id of particular token). It should be called before issuing ownership for any NFT.
+
 
 #### issue
 
@@ -92,16 +100,6 @@ ACTION closesale (name seller,
 ```
 It is callable by seller if listing hasn't expired, or anyone if the listing is expired.
 
-
-#### giveroyalty
-
-```
-ACTION giveroyalty (uint64_t category_id,
-                    asset royalty)
-```
-This action is used to give away the royalty collected to the ownership holders of particular VT-A. The x% ownership means x% of the royalty. Can be called by the `_self` every quarter. 
-
----------------------------  
 
 ### Data Structures
 
