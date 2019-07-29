@@ -1,0 +1,12 @@
+{
+    "details":{
+    "account":"<EOS_ACCOUNT_NAME>",
+    "email":"<PERSONAL EMAIL ID>",
+    "mobile":"<MOBILE NUMBER>",
+    "category":"<CATEGORY NAME>",
+    "token":"<NFT NAME>",
+    "span":"<VALIDITY IN NO. OF YEARS>",
+    "burnable":"<true OR false>",
+    "validatoraccount": "<VALIDATOR_EOS_ACCOUNT_NAME>"
+    }
+}
